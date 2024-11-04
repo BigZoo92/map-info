@@ -2,7 +2,7 @@ import { WorldMap } from './components/WorldMap'
 
 export default function Home() {
   return (
-    <section>
+    <section className="svg-container">
       <WorldMap />
     </section>
   )

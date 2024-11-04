@@ -5,7 +5,13 @@ import { useEffect, useRef } from 'react'
 import { getGeo } from './geo'
 import getArticles from './getArticles'
 
-export const useMap = () => {
+export const useMap = ({
+  width,
+  height,
+}: {
+  width: number
+  height: number
+}) => {
   const svgRef = useRef<SVGSVGElement>(null)
 
   useEffect(() => {
@@ -13,8 +19,6 @@ export const useMap = () => {
     if (!svgRef.current) return
 
     const svg = d3.select(svgRef.current)
-    const width = 1000
-    const height = 600
 
     const { pathGenerator, countries, zoom } = getGeo(width, height, svg)
 
