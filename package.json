@@ -18,7 +18,8 @@
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
     "sass": "^1.80.5",
-    "world-atlas": "^2.0.2"
+    "world-atlas": "^2.0.2",
+    "zustand": "^5.0.1"
   },
   "devDependencies": {
     "@types/d3": "^7.4.3",
