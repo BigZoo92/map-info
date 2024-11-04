@@ -16,13 +16,9 @@ export const useResponsiveSvg = () => {
   const debouncedWindowWidth = useDebounce(windowWidth, 100)
   const debouncedWindowHeight = useDebounce(windowHeight, 100)
 
-  const resizeSvg = useCallback(() => {
-    const parent = document.querySelector('.svg-container')
-    console.log(parent)
-    if (parent) {
-      const { width, height } = parent.getBoundingClientRect()
-      setSize({ width, height })
-    }
+  const resizeSvg = useCallback((parent: Element) => {
+    const { width, height } = parent.getBoundingClientRect()
+    setSize({ width, height })
   }, [])
 
   useEffect(() => {
@@ -32,7 +28,9 @@ export const useResponsiveSvg = () => {
 
   useEffect(() => {
     if (!mounted) return
-    resizeSvg()
+    const parent = document.querySelector('.svg-container')
+    if (!parent) return
+    resizeSvg(parent)
   }, [debouncedWindowWidth, debouncedWindowHeight, resizeSvg])
 
   return size

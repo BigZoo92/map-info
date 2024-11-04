@@ -8,3 +8,9 @@ body {
   scroll-behavior: smooth;
   min-height: 100dvh;
 }
+
+main,
+section {
+  width: 100%;
+  min-height: 100dvh;
+}

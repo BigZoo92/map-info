@@ -1,22 +1,19 @@
 'use client'
 
+import { useResponsiveSvg } from '@/app/hook'
 import * as d3 from 'd3'
 import { useEffect, useRef } from 'react'
 import { getGeo } from './geo'
 import getArticles from './getArticles'
 
-export const useMap = ({
-  width,
-  height,
-}: {
-  width: number
-  height: number
-}) => {
+export const useMap = () => {
   const svgRef = useRef<SVGSVGElement>(null)
+  const { width, height } = useResponsiveSvg()
 
   useEffect(() => {
     if (typeof window === 'undefined') return
     if (!svgRef.current) return
+    if (width === 0) return
 
     const svg = d3.select(svgRef.current)
 
@@ -63,7 +60,7 @@ export const useMap = ({
           console.error('Erreur lors de la récupération des articles:', error)
         }
       })
-  }, [])
+  }, [width, svgRef, height])
 
   return svgRef
 }

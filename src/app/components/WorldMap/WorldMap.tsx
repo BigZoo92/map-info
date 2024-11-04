@@ -7,9 +7,7 @@ import { useMap } from './useMap'
 const WorldMap: React.FC = () => {
   const { width, height } = useResponsiveSvg()
 
-  const svgRef = useMap({ width, height })
-
-  console.log({ width, height })
+  const svgRef = useMap()
 
   if (width === 0 || height === 0) return null
 
