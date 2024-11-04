@@ -1,7 +1,6 @@
 'use client'
 
-import useStore from '@/app/store/useStore'
-import Image from 'next/image'
+import useStore from '../../store/useStore'
 
 export const customLoader = ({ src }: { src: string }) => {
   return src
@@ -35,15 +34,9 @@ export default function () {
             }}
           >
             {article.urlToImage && (
-              <Image
-                unoptimized
+              <img
                 src={article.urlToImage}
                 alt={article.description ? article.description : ''}
-                width={300}
-                height={200}
-                quality={75}
-                placeholder="blur"
-                blurDataURL="data:image/svg+xml;base64,[BASE64]"
               />
             )}
             <div

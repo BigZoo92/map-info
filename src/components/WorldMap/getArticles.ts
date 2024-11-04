@@ -5,7 +5,7 @@ export default async function getArticles(
   params: NewsParams = {}
 ): Promise<NewsResponse | null> {
   try {
-    const apiKey = process.env.NEXT_PUBLIC_NEWS_API_KEY
+    const apiKey = import.meta.env.VITE_NEWS_API_KEY
     if (!apiKey) throw new Error('API key not found')
 
     const url = new URL('https://newsapi.org/v2/top-headlines')

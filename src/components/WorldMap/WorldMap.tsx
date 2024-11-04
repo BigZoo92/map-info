@@ -1,7 +1,7 @@
 'use client'
 
-import { useResponsiveSvg } from '@/app/hook'
 import React from 'react'
+import { useResponsiveSvg } from '../../hook/'
 import { useMap } from './useMap'
 
 const WorldMap: React.FC = () => {

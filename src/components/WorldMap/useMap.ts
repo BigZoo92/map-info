@@ -1,9 +1,9 @@
 'use client'
 
-import { useResponsiveSvg } from '@/app/hook'
-import useStore from '@/app/store/useStore'
 import * as d3 from 'd3'
 import { useEffect, useRef } from 'react'
+import { useResponsiveSvg } from '../../hook'
+import useStore from '../../store/useStore'
 import { getGeo } from './geo'
 import getArticles from './getArticles'
 
