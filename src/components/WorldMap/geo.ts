@@ -1,6 +1,7 @@
 'use client'
 
 import * as d3 from 'd3'
+//@ts-ignore
 import { geoPath } from 'd3-geo'
 import { feature } from 'topojson-client'
 import worldData from 'world-atlas/countries-50m.json'
@@ -22,6 +23,7 @@ export const getGeo = (
   const countries = feature(
     typedWorldData,
     typedWorldData.objects.countries
+    //@ts-ignore
   ).features.filter((country) => country.properties.name !== 'Antarctica')
 
   const zoom = d3

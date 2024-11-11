@@ -1,0 +1,11 @@
+@import '../../sass/variables';
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  display: none;
+  background-color: $purple-dark;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 12px;
+}

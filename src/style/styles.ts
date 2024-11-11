@@ -4,6 +4,7 @@ interface ThemeColors {
   light: string
   default: string
   dark: string
+  transparent?: string
 }
 
 export type Colors = {
@@ -25,10 +26,12 @@ export const colors: Colors = {
     light: '#858AE3',
     default: '#613DC1',
     dark: '#4E148C',
+    transparent: '#DFD8F2',
   },
   blue: {
     light: '#CEF1FF3',
     default: '#97DFFC',
     dark: '#6FA6BB',
+    transparent: '#EAF8FE',
   },
 }

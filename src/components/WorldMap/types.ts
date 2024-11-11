@@ -1,3 +1,4 @@
+//@ts-ignore
 import { GeometryCollection, Objects, Topology } from 'topojson-specification'
 
 export type GeoJsonProperties = Record<string, unknown>
