@@ -79,11 +79,18 @@ export default function ArticleCards() {
                 style={{
                   display: 'flex',
                   justifyContent: 'space-between',
-                  alignItems: 'center',
+                  alignItems: 'flex-start',
+                  gap: 10,
                   width: '100%',
                 }}
               >
-                <div>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 10,
+                  }}
+                >
                   <h3
                     style={{
                       fontSize: 'clamp(1.25rem, 2vw, 1.75rem)',
