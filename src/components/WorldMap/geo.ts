@@ -1,7 +1,6 @@
 'use client'
 
 import * as d3 from 'd3'
-//@ts-ignore
 import { geoPath } from 'd3-geo'
 import { feature } from 'topojson-client'
 import worldData from 'world-atlas/countries-50m.json'

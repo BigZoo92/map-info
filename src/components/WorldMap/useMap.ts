@@ -6,6 +6,12 @@ import { colors } from '../../style/styles'
 import { getGeo } from './geo'
 import getArticles from './getArticles'
 
+type Projection = d3.ValueFn<
+  d3.BaseType | SVGPathElement,
+  unknown,
+  string | number | boolean | readonly (string | number)[] | null
+>
+
 export const useMap = () => {
   const svgRef = useRef<SVGSVGElement>(null)
   const tooltipRef = useRef<HTMLDivElement>(null)
@@ -29,7 +35,7 @@ export const useMap = () => {
       .selectAll('path')
       .data(countries)
       .join('path')
-      .attr('d', pathGenerator)
+      .attr('d', pathGenerator as Projection)
       .attr('fill', colors.blue.transparent || colors.blue.light)
       .attr('stroke', colors.blue.default)
       .attr('class', 'country')
